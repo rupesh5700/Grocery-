@@ -11,7 +11,10 @@
   <%= f.hidden_field :product_id, :value => item.product.id%>
   <%= f.number_field :Quantity, :value => item.quantity.to_i%>
   <%= f.submit "Update"%>
+  <%= link_to "Remove ", order_item_path(item), method: :delete, remote: true%>
   <%end%>
   <h2>Subtotal: <%= item.total%></h2>
 
 <% end %>
+
+<h3>your current card value subtotal: <%= current_order.subtotal%></h3>.
